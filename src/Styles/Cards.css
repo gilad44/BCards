@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MyCard {
+  @apply relative flex h-fluid-2xl w-fluid-lg cursor-pointer flex-col overflow-hidden hover:translate-x-1 hover:translate-y-1 dark:bg-black dark:text-blue-300;
+}
+
+.cardThemeBase {
+  @apply h-fluid-2xl rounded-xl bg-white shadow-[2px_4px_5px_gray]
+max-sm:my-fluid-xs max-sm:h-fluid-3xl max-sm:w-fluid-xl;
+}
+.cardThemeKids {
+  @apply space-y-fluid-xs;
+}
+.cardImage {
+  @apply h-fluid-lg w-fluid-xl rounded-xl border-[3px] border-transparent;
+}
+.cardBody {
+  @apply p-fluid-2xs text-fluid-sm;
+}
+.cardButtons {
+  @apply absolute inset-x-0 bottom-fluid-xs px-fluid-sm;
+}
+.heart {
+  @apply cursor-pointer text-xl;
+}
+.phone {
+  @apply text-fluid-sm;
+}

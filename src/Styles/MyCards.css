@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.myCardsMain {
+  @apply flex h-1/2 w-full flex-col items-center justify-center gap-10 bg-gradient-to-b from-blue-400 via-white to-blue-400 font-semibold dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.noCards {
+  @apply flex flex-col items-center justify-center space-y-fluid-md rounded-lg border border-gray-200 bg-gradient-to-t from-blue-400 via-white  to-blue-400 p-fluid-md text-center shadow-md dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.myCardsHeader {
+  @apply mt-fluid-sm flex h-fluid-md w-11/12 flex-col items-center justify-center rounded-full border border-black bg-gradient-to-b from-blue-400 via-white to-blue-400 py-fluid-xl shadow-md shadow-slate-700 dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.myCardsTitle {
+  @apply text-fluid-2xl font-semibold;
+}
+
+.myCardsDescription {
+  @apply text-fluid-sm font-medium dark:text-black;
+}
+.myCardsSection {
+  @apply flex size-full flex-wrap items-center justify-center gap-fluid-lg pb-fluid-7xl pt-fluid-md;
+}
+
+.createCard {
+  @apply absolute top-fluid-2xs mt-fluid-xl w-fluid-3xl transition-opacity duration-500;
+}
+.createCardButton {
+  @apply fixed right-fluid-2xl top-fluid-5xl scale-[3] text-fluid-sm dark:text-blue-400 max-md:top-fluid-5xl max-xs:right-fluid-xl;
+}

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.outer-div {
+  @apply flex size-full flex-col items-center justify-center bg-gradient-to-t from-blue-400 via-white to-blue-400 font-medium;
+  font-family: Cormorant;
+}
+.card {
+  @apply my-fluid-xl flex h-full w-[600px] flex-col items-center justify-center rounded-2xl bg-gradient-to-t from-sky-400 to-white p-fluid-sm shadow-md shadow-slate-800;
+}
+.card-upper {
+  @apply flex size-full flex-col items-center justify-center gap-2 rounded-2xl p-2;
+}
+.card-lower {
+  @apply flex size-full flex-col items-center justify-center gap-2 rounded-2xl p-2;
+}
+.retunButton {
+  @apply flex h-fluid-xs w-fluid-lg items-center border-none bg-sky-800 py-fluid-sm text-fluid-base text-white shadow-md;
+}

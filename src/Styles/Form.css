@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.formMain {
+  @apply flex w-full flex-col items-center justify-start rounded-xl bg-gradient-to-b from-sky-800 via-blue-300 to-sky-800 px-fluid-xl pb-fluid-sm shadow-2xl shadow-gray-500;
+  font-family: cormorant;
+}
+.form {
+  @apply mb-fluid-md flex flex-col items-center max-xs:w-fluid-xl;
+}
+.formTitle {
+  @apply mt-fluid-lg h-fluid-md w-fluid-xl bg-gradient-to-b from-blue-600 to-white bg-clip-text text-center text-fluid-2xl font-bold text-transparent;
+  -webkit-text-stroke: 0.18px black;
+}
+.formBody {
+  @apply flex justify-center gap-fluid-xl pt-fluid-sm max-xs:gap-fluid-2xs;
+}
+.leftColumn {
+  @apply flex h-full w-fluid-lg flex-col items-center justify-center;
+}
+.rightColumn {
+  @apply flex h-full w-fluid-lg flex-col items-center justify-center;
+}
+.formButtons {
+  @apply flex w-full items-center justify-center gap-fluid-2xl;
+}
+.submit {
+  @apply flex h-fluid-sm w-fluid-lg items-center justify-center rounded-full bg-gradient-to-b from-cyan-800 via-white to-cyan-800 pt-fluid-md text-fluid-xs shadow-sm shadow-black sm:pt-fluid-sm;
+}
+.reset {
+  @apply flex h-fluid-sm w-fluid-lg items-center justify-center rounded-full bg-gradient-to-b from-cyan-800 via-white to-cyan-800 pt-fluid-md text-fluid-xs shadow-sm shadow-black sm:pt-fluid-sm;
+}

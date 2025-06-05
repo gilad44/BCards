@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.paginationDiv {
+  @apply flex items-center justify-center pb-fluid-lg text-fluid-xs text-black;
+}
+.paginationLayoutBase {
+  @apply flex items-center justify-center text-black;
+}
+
+.paginationLayoutSpan {
+  @apply font-semibold text-black;
+}
+
+.pagesBase {
+  @apply mt-2 inline-flex items-center -space-x-px rounded-full bg-gradient-to-b from-cyan-800 via-white to-cyan-800 text-black shadow-md shadow-black xs:mt-0;
+}
+.pagesPrevious {
+  @apply ml-0 flex h-fluid-sm items-center rounded-l-full border border-none border-gray-300 bg-white bg-gradient-to-b from-cyan-800 via-white to-cyan-800 px-3 leading-tight text-black hover:bg-gray-100  hover:text-gray-700  dark:border-gray-700 dark:bg-gray-600  dark:hover:bg-gray-400;
+}
+.pagesNext {
+  @apply ml-0 flex h-fluid-sm items-center rounded-r-full border border-none border-gray-300 bg-white bg-gradient-to-b from-cyan-800 via-white to-cyan-800 px-fluid-xs pt-0.5 leading-tight  text-black hover:bg-gray-100  hover:text-gray-700  dark:border-gray-700 dark:bg-gray-600   dark:hover:bg-gray-400;
+}
+.pagesSelectorBase {
+  @apply h-fluid-sm w-fluid-sm bg-white bg-gradient-to-b from-cyan-800 via-white to-cyan-800 text-black hover:bg-gray-400 hover:text-gray-700 dark:bg-gray-600  dark:hover:bg-gray-400;
+}

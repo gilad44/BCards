@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profileMainDiv {
+  @apply flex size-full flex-col items-center justify-center gap-fluid-2xl bg-gradient-to-b from-blue-400 via-white to-blue-400 font-semibold dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.profileHeader {
+  @apply mt-fluid-sm flex h-fluid-md w-11/12 flex-col items-center justify-center rounded-full border border-black bg-gradient-to-b from-blue-400 via-white to-blue-400 py-fluid-xl  shadow-md shadow-slate-700 dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.profileTitle {
+  @apply ml-fluid-sm text-fluid-2xl font-semibold;
+}
+.profileDescription {
+  @apply mb-fluid-2xs text-fluid-sm font-medium;
+}
+.userImage {
+  @apply absolute left-fluid-3xl top-fluid-5xl size-fluid-6xl rounded-full border-2 border-black bg-white bg-gradient-to-b from-cyan-700 via-white to-cyan-700 p-fluid-md shadow-md shadow-slate-800 max-sm:hidden;
+}
+.profile {
+  @apply -mt-fluid-lg mb-fluid-lg ml-fluid-sm flex h-full w-[90%] flex-col items-center justify-start gap-fluid-2xs rounded-xl border-4 border-double border-black bg-transparent p-fluid-sm  shadow-lg shadow-slate-800;
+}
+.profileTableField {
+  @apply w-fluid-lg rounded-b-xl pl-fluid-xs font-semibold shadow-md shadow-slate-800;
+}
+.profileTableValue {
+  @apply ml-fluid-2xs w-full rounded-b-xl bg-slate-200 pl-fluid-xs text-fluid-sm shadow-md shadow-slate-800;
+}
+.userDetailsDiv {
+  @apply flex size-full flex-col items-start justify-start gap-fluid-2xs p-fluid-2xs text-fluid-sm;
+}
+.userInfoTitle {
+  @apply mb-fluid-xs mt-fluid-2xs w-fluid-2xl border-b-2 border-black text-fluid-xl font-bold;
+}
+.userContactDiv {
+  @apply flex size-full flex-col items-start justify-start gap-fluid-2xs p-fluid-2xs;
+}
+.userContactTitle {
+  @apply mb-fluid-xs mt-fluid-sm w-fluid-2xl border-b-2 border-black text-fluid-xl font-bold;
+}
+.formDiv {
+  @apply absolute top-fluid-10xl flex w-1/2 items-center justify-center transition-opacity duration-500;
+}
+.profileEditButton {
+  @apply flex h-fluid-sm items-center rounded-full bg-gradient-to-b from-cyan-800 via-white to-cyan-800 pt-fluid-xs text-fluid-sm text-black shadow-sm shadow-black max-sm:w-fluid-2xl;
+}

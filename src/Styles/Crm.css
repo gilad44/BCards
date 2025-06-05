@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.CrmMainDiv {
+  @apply flex h-1/2 w-full flex-col items-center justify-center gap-10 bg-gradient-to-b from-blue-400 via-white to-blue-400 font-semibold dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.crmTitleDiv {
+  @apply mt-fluid-sm flex h-fluid-md w-11/12 flex-col items-center justify-center rounded-full border border-black bg-gradient-to-b from-blue-400 via-white to-blue-400 py-fluid-xl shadow-md  shadow-slate-700 dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.crmTitle {
+  @apply ml-fluid-sm text-fluid-2xl font-semibold;
+}
+.subtitle {
+  @apply mb-fluid-2xs text-fluid-sm font-medium max-sm:text-[3vmax];
+}
+.tableDiv {
+  @apply -mt-fluid-2xl flex h-1/2 flex-col items-center justify-center gap-5;
+  border-radius: 50%;
+}
+.tableTitle {
+  @apply mt-fluid-2xl text-fluid-xl;
+}
+
+.tableHead {
+  @apply text-fluid-sm;
+}
+.tableRow {
+  @apply text-center shadow-md shadow-slate-700 hover:cursor-pointer;
+}
+
+.detailsSectionTitle {
+  @apply text-fluid-lg;
+}
+.details {
+  @apply flex h-[300px] w-fluid-2xl flex-col items-center justify-center rounded-2xl bg-white shadow-xl shadow-slate-800 dark:bg-blue-300;
+}
+.cardDetailDiv {
+  @apply mb-fluid-xs flex h-fluid-md w-[90%];
+}
+.buttons {
+  @apply flex items-center justify-center gap-fluid-xl;
+}
+.editButton {
+  @apply h-fluid-sm w-fluid-md rounded-full bg-gradient-to-b from-cyan-800 via-white to-cyan-800 pt-[3.7%] text-fluid-base  shadow-sm shadow-black;
+}
+.deleteButton {
+  @apply h-fluid-sm w-fluid-md rounded-full bg-gradient-to-b from-red-800 via-white to-red-800 pt-[3%] text-fluid-lg text-black shadow-sm shadow-black;
+}
+.loadMoreButton {
+  @apply flex h-fluid-sm w-fluid-lg justify-center rounded-full bg-gradient-to-b from-cyan-800 via-white to-cyan-800 pt-fluid-2xs text-fluid-xs text-black shadow-sm shadow-black;
+}
+.cardField {
+  @apply w-1/4 border-b border-black pt-fluid-sm font-semibold;
+}
+.cardValue {
+  @apply ml-fluid-md w-fluid-lg border-b border-black pl-fluid-2xs pt-fluid-sm text-fluid-xs;
+}

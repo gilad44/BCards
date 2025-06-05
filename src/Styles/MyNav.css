@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbarBase {
+  @apply flex items-center;
+}
+.navbarInnerBase {
+  @apply flex h-fluid-md w-full items-center justify-start
+  bg-blue-600 shadow-lg dark:bg-blue-800 dark:text-white;
+}
+
+.myNav-brand-desktop {
+  @apply h-fluid-md w-fluid-lg;
+}
+.myNav-brand-mobile {
+  @apply -mt-fluid-xs h-fluid-md w-fluid-lg max-xs:mr-fluid-6xl max-xs:h-fluid-md 2xs:w-fluid-2xl;
+}
+
+.myNav-input {
+  @apply rounded-3xl bg-blue-200  dark:bg-gray-500;
+}
+.my-nav-search {
+  @apply absolute left-0 top-1/2 ml-fluid-2xs -translate-y-fluid-xs text-gray-600 dark:text-white;
+}
+.myNav-profile {
+  @apply ml-fluid-sm mt-fluid-2xs size-fluid-md cursor-pointer overflow-hidden rounded-full bg-blue-500 max-md:ml-fluid-lg max-md:mt-0 max-md:h-fluid-xs max-md:w-5;
+}
+
+.myNav-toggle {
+  @apply fixed right-fluid-lg max-md:mb-fluid-xs max-md:size-3 md:hidden;
+}
+.myNav-collapse {
+  @apply max-md:ml-fluid-xl max-md:mt-fluid-5xl max-md:size-full;
+}
+.myNav-links-desktop {
+  @apply -my-fluid-xs mx-fluid-2xs w-fluid-md;
+}
+.myNav-links-mobile {
+  @apply -my-fluid-sm -mr-fluid-xl h-fluid-md w-fluid-lg;
+}
+.dark-toggle {
+  @apply mr-fluid-sm size-fluid-2xl p-2 max-sm:mr-fluid-xl;
+}
+.dark-toggle svg {
+  @apply size-fluid-sm  
+   text-black hover:bg-transparent hover:text-gray-200;
+}

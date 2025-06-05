@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  @apply fixed bottom-0 z-20 flex h-fluid-sm w-full flex-col items-center bg-gray-200 pt-fluid-xs text-fluid-2xs dark:bg-gray-700
+  dark:text-gray-400 max-md:hidden;
+}

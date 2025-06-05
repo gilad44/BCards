@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainDiv {
+  @apply flex h-1/2 w-full flex-col items-center justify-center gap-10 bg-gradient-to-b from-blue-400 via-white to-blue-400 font-semibold dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.mainHeader {
+  @apply mt-fluid-sm flex h-fluid-md w-11/12 flex-col items-center justify-center rounded-full border border-black bg-gradient-to-b from-blue-400 via-white to-blue-400 py-fluid-xl shadow-md shadow-slate-700 dark:bg-gradient-to-t dark:from-blue-800 dark:via-gray-300 dark:to-blue-800 dark:text-black;
+}
+.mainTitle {
+  @apply text-fluid-2xl font-semibold;
+}
+.mainDescription {
+  @apply text-fluid-sm font-medium dark:text-black max-sm:text-[3vmax];
+}
+.mainSpinnerDiv {
+  @apply flex w-full justify-center;
+}
+.mainCardSection {
+  @apply flex h-full w-full flex-wrap items-center justify-center gap-fluid-sm;
+}
