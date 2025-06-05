@@ -6,8 +6,8 @@ import MyPagination from "../comps/MyPagination";
 import { paginationTheme } from "../data/themes";
 import useCardPagination from "../Hooks/useCardPagination";
 import useSetCards from "../Hooks/useCards";
-import { TCard } from "../types/TCard";
 import type { RootState } from "../store/store";
+import { TCard } from "../types/TCard";
 
 const FavoriteCards = () => {
   const { cards, loading } = useSetCards();

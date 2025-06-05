@@ -11,9 +11,9 @@ import EditCard from "../comps/EditCard";
 import MyPagination from "../comps/MyPagination";
 import { buttonTheme, paginationTheme } from "../data/themes";
 import useCardPagination from "../Hooks/useCardPagination";
+import type { RootState } from "../store/store";
 import { TCard } from "../types/TCard";
 import UsersProps from "../types/UsersProps";
-import type { RootState } from "../store/store";
 
 const Crm = () => {
   const [editVisible, setEditVisible] = useState(false);
