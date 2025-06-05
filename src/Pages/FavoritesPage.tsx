@@ -1,13 +1,14 @@
-import type { RootState } from "@react-three/fiber";
 import { Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import MyCards from "../comps/Cards";
-import MyPagination from "../comps/Mypagination";
+import MyPagination from "../comps/MyPagination";
 import { paginationTheme } from "../data/themes";
 import useCardPagination from "../Hooks/useCardPagination";
 import useSetCards from "../Hooks/useCards";
 import { TCard } from "../types/TCard";
+import type { RootState } from "../store/store";
+
 const FavoriteCards = () => {
   const { cards, loading } = useSetCards();
   const [favCards, setFavCards] = useState<TCard[]>([]);
@@ -70,4 +71,5 @@ const FavoriteCards = () => {
     </div>
   );
 };
+
 export default FavoriteCards;

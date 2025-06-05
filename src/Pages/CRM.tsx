@@ -1,4 +1,3 @@
-import type { RootState } from "@react-three/fiber";
 import axios from "axios";
 import { Button, Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
@@ -9,11 +8,13 @@ import { toast } from "react-toastify";
 import DetailsSection from "../comps/CardDetailsSection";
 import CrmTable from "../comps/CrmTable";
 import EditCard from "../comps/EditCard";
-import MyPagination from "../comps/Mypagination";
+import MyPagination from "../comps/MyPagination";
 import { buttonTheme, paginationTheme } from "../data/themes";
 import useCardPagination from "../Hooks/useCardPagination";
 import { TCard } from "../types/TCard";
 import UsersProps from "../types/UsersProps";
+import type { RootState } from "../store/store";
+
 const Crm = () => {
   const [editVisible, setEditVisible] = useState(false);
   const [loading, setLoading] = useState(true);
