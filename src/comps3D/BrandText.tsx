@@ -43,7 +43,11 @@ const Text3DContent = ({
   const { viewport } = useThree();
 
   useEffect(() => {
-    const baseScale = viewport.width / 40;
+    let baseScale = viewport.width / 40;
+    // Make the text smaller on screens 900px and below
+    if (window.innerWidth <= 900) {
+      baseScale = viewport.width / 60;
+    }
     setResponsiveScale(baseScale * scale);
   }, [viewport.width, scale]);
 
