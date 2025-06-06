@@ -23,5 +23,5 @@
   @apply flex w-full justify-center;
 }
 .favCardSection {
-  @apply flex h-full w-full flex-wrap items-center justify-center gap-fluid-sm pt-fluid-md;
+  @apply flex h-full w-full flex-wrap items-center justify-center gap-fluid-sm py-fluid-xl;
 }

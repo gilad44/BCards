@@ -44,9 +44,8 @@ const Text3DContent = ({
 
   useEffect(() => {
     let baseScale = viewport.width / 40;
-    // Make the text smaller on screens 900px and below
-    if (window.innerWidth <= 900) {
-      baseScale = viewport.width / 60;
+    if (window.innerWidth <= 480) {
+      baseScale = viewport.width / 80;
     }
     setResponsiveScale(baseScale * scale);
   }, [viewport.width, scale]);
@@ -104,7 +103,7 @@ const FallbackContent = () => {
   return (
     <mesh>
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial color={lightBlue} />
+      <meshBasicMaterial color="lightblue" />
     </mesh>
   );
 };

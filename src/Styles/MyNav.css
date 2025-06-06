@@ -20,7 +20,7 @@
   @apply h-fluid-md w-fluid-lg;
 }
 .myNav-brand-mobile {
-  @apply -mt-fluid-xs h-fluid-md w-fluid-lg max-xs:mr-fluid-6xl max-xs:h-fluid-md 2xs:w-fluid-2xl;
+  @apply -mt-fluid-xs h-fluid-md w-fluid-xl max-sm:h-fluid-md max-sm:w-[40vmax] max-xs:-ml-fluid-xl max-xs:mr-fluid-lg max-xs:w-[50vmax];
 }
 
 .myNav-input {
@@ -29,6 +29,7 @@
 .my-nav-search {
   @apply absolute left-0 top-1/2 ml-fluid-2xs -translate-y-fluid-xs text-gray-600 dark:text-white;
 }
+
 .myNav-profile {
   @apply ml-fluid-sm mt-fluid-2xs size-fluid-md cursor-pointer overflow-hidden rounded-full bg-blue-500 max-md:ml-fluid-lg max-md:mt-0 max-md:h-fluid-xs max-md:w-5;
 }

@@ -107,13 +107,18 @@ const MyNav = () => {
             onClick={handleBrandClick}
             sx={{
               display: { xs: "flex", md: "none" },
-              flexGrow: 1,
               cursor: "pointer",
             }}
           >
-            <div className="myNav-brand-mobile">
-              <BrandText />
-            </div>
+            {window.innerWidth >= 400 ? (
+              <div className="myNav-brand-mobile">
+                <BrandText />
+              </div>
+            ) : (
+              <div className="-ml-8 mr-fluid-6xl h-fluid-sm w-fluid-lg">
+                <BrandText />
+              </div>
+            )}
           </Typography>
 
           {/* Desktop menu */}
@@ -166,7 +171,12 @@ const MyNav = () => {
                 },
               }}
             />
-            <SearchIcon className="my-nav-search" />
+            <SearchIcon
+              className="my-nav-search"
+              sx={{
+                fontSize: { xs: 20, sm: 20 },
+              }}
+            />
           </Box>
 
           {/* Dark mode toggle */}
