@@ -53,7 +53,7 @@ const EditCard = ({ card }: EditCardProps) => {
       }
 
       await axios.put(
-        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/65424d35cb6bcb58697bab4a",
+        `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${card._id}`,
         form,
       );
       toast.success("Card updated successfully!");
