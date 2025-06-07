@@ -82,8 +82,6 @@ const Text3DContent = ({
   );
 };
 
-// const Text3DContentMemo = React.memo(Text3DContent);
-
 const BrandText = ({ onClick }: { onClick?: (e: any) => void }) => {
   return (
     <Canvas
