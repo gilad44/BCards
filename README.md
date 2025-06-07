@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# BCard - Business Card Management Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BCard is a modern web application for creating, managing, and sharing digital business cards. Built as a school project, it demonstrates best practices in React development, state management, and responsive UI design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication:** Sign up, log in, and manage your profile securely.
+- **Business Card Management:** Create, edit, and delete your own digital business cards.
+- **Favorites:** Browse cards from other users and add them to your favorites.
+- **Admin CRM:** Admin users can view, edit, and delete all cards and users.
+- **Responsive Design:** Works seamlessly on desktop and mobile devices.
+- **Search & Pagination:** Quickly find cards and navigate large lists.
+- **Dark Mode:** Toggle between light and dark themes for comfortable viewing.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend:** React, TypeScript
+- **State Management:** Redux Toolkit
+- **UI Components:** Flowbite React, Material UI
+- **Styling:** Tailwind CSS
+- **Form Validation:** Joi
+- **Routing:** React Router
+- **HTTP Requests:** Axios
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `src/Pages/` — Main app pages (About, Login, Signup, Profile, MyCards, CRM, etc.)
+- `src/comps/` — Reusable UI components (Nav, Footer, Cards, etc.)
+- `src/comps3D/` — 3D visual components (BrandText, Links3D)
+- `src/data/` — Theme and style configuration
+- `src/Hooks/` — Custom React hooks
+- `src/Validations/` — Joi validation schemas
+- `src/store/` — Redux store setup
+- `src/slices/` — Redux slices for state management
+- `src/types/` — TypeScript type definitions
+- `src/Styles/` — Tailwind and custom CSS files
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+3. **Open your browser:**
+   Visit [http://localhost:5173](http://localhost:5173) to view the app.
