@@ -1,6 +1,6 @@
 import { Text3D, useMatcapTexture } from "@react-three/drei";
 import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
-import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 extend({ Material: THREE.MeshStandardMaterial });
@@ -82,7 +82,7 @@ const Text3DContent = ({
   );
 };
 
-const Text3DContentMemo = React.memo(Text3DContent);
+// const Text3DContentMemo = React.memo(Text3DContent);
 
 const BrandText = ({ onClick }: { onClick?: (e: any) => void }) => {
   return (

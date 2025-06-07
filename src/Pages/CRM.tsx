@@ -29,7 +29,7 @@ const Crm = () => {
     currentPage,
     totalPages,
     onPageChange,
-    isMobile,
+    // isMobile,
     loadMore,
   } = useCardPagination({
     allCards: cardsInfo,
