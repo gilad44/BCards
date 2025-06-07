@@ -1,4 +1,3 @@
-import { lightBlue } from "@mui/material/colors";
 import { Text3D, useMatcapTexture } from "@react-three/drei";
 import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
 import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";

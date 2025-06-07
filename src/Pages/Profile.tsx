@@ -23,19 +23,22 @@ const Profile = () => {
   }
   return (
     <>
+      {/* Edit Profile Form */}
       <div className="flex size-full items-center justify-center">
         <div className={`formDiv ${editVisible ? "opacity-100" : "opacity-0"}`}>
           <EditProfile />
         </div>
       </div>
-      
+
       <div className="profileMainDiv">
+        {/* Profile Header */}
         <div className="profileHeader">
           <h1 className="profileTitle">
             Welcome {capitalize(user.name.first)}
           </h1>
           <p className="profileDescription">View & edit your profile</p>
         </div>
+        {/* User Image */}
         <img
           className="userImage"
           src={user?.image.url}
@@ -43,6 +46,7 @@ const Profile = () => {
         />
         <h1 className="mt-fluid-xl text-fluid-2xl">Your Profile</h1>
         <div className="profile">
+          {/* User Info Section */}
           <div className="flex w-full justify-between px-3">
             <h2 className="userInfoTitle">User Info</h2>
             <Button
@@ -70,6 +74,7 @@ const Profile = () => {
             {user?.isAdmin && <UserDetail field="Admin" value="Yes" />}
             {!user?.isAdmin && <UserDetail field="Admin" value="No" />}
           </div>
+          {/* User Contact Section */}
           <div className="userContactDiv">
             <h2 className="userContactTitle">Contact</h2>
             <UserDetail field="Phone" value={user?.phone} />

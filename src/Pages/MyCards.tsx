@@ -81,14 +81,17 @@ const MyCards = () => {
   return (
     <>
       <div className="myCardsMain">
+        {/* Header */}
         <header className="myCardsHeader">
           <h1 className="myCardsTitle">My Cards</h1>
           <p className="myCardsDescription">
             Create, edit or delete your cards
           </p>
         </header>
+        {/* Cards Section */}
         <section className="myCardsSection">
           {cards.length === 0 ? (
+            // No Cards Message
             <div className="noCards">
               <p className="text-xl">You don't have any cards yet</p>
               <Button
@@ -101,6 +104,7 @@ const MyCards = () => {
               </Button>
             </div>
           ) : (
+            // Cards List and Create Card Form
             <>
               <Cards cards={itemsToDisplay} />
               <div
@@ -115,6 +119,7 @@ const MyCards = () => {
             </>
           )}
         </section>
+        {/* Pagination */}
         {!isMobile && totalPages > 1 && (
           <div className="paginationDiv">
             <MyPagination

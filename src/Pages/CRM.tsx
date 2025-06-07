@@ -94,13 +94,16 @@ const Crm = () => {
 
   return (
     <div className="CrmMainDiv">
+      {/* Title Section */}
       <div className="crmTitleDiv">
         <h1 className="crmTitle">Client Management</h1>
         <h2 className="subtitle">View, edit, or delete cards & users</h2>
       </div>
+      {/* Table Section */}
       <div className="tableDiv">
         <h2 className="tableTitle">Cards/Users</h2>
         {(selectedRow || editVisible) && (
+          // Edit/Delete Buttons
           <>
             <div className="buttons">
               <Button
@@ -141,13 +144,14 @@ const Crm = () => {
             />
           ))}
         {loading && <Spinner size="xl" />}
+        {/* CRM Table */}
         <CrmTable
           currentCards={itemsToDisplay}
           findUserForCard={findUserForCard}
           setSelectedRow={setSelectedRow}
         />
       </div>
-
+      {/* Pagination/Load More */}
       <div className="paginationDiv">
         {window.innerWidth < 640 ? (
           <Button

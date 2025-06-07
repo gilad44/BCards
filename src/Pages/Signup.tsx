@@ -1,5 +1,5 @@
 import { joiResolver } from "@hookform/resolvers/joi";
-import { default as axios } from "axios";
+import axios from "axios";
 import { Button, Checkbox, Label } from "flowbite-react";
 import { jwtDecode } from "jwt-decode";
 import { useForm } from "react-hook-form";

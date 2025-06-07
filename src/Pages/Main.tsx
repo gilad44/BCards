@@ -1,5 +1,5 @@
 import { Spinner } from "flowbite-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 import Cards from "../comps/Cards";
@@ -46,6 +46,7 @@ const Main = () => {
   return (
     <>
       <div className="mainDiv">
+        {/* Header */}
         <header className="mainHeader">
           <h1 className="mainTitle">Cards Examples</h1>
           <p className="mainDescription">
@@ -53,9 +54,11 @@ const Main = () => {
           </p>
         </header>
         <div className="mainSpinnerDiv">{loading && <Spinner size="xl" />}</div>
+        {/* Cards Section */}
         <section className="mainCardSection">
           <Cards cards={itemsToDisplay} />
         </section>
+        {/* Pagination */}
         {!isMobile && totalPages > 1 && (
           <div className="paginationDiv">
             <MyPagination

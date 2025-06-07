@@ -93,7 +93,7 @@ const CapsuleContent = ({
   const frameCount = useRef(0);
   const FRAME_SKIP = 2;
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     frameCount.current += 1;
     if (frameCount.current % FRAME_SKIP !== 0) return;
 
@@ -158,7 +158,6 @@ const CapsuleContent = ({
   }, [text]);
 
   const capsuleGeoArgs = useMemo(() => {
-    // Reduce segments for smaller screens
     const radialSegments = viewport.width < 768 ? 16 : 32;
     const heightSegments = viewport.width < 768 ? 32 : 64;
     return [1.8, capsuleLength, radialSegments, heightSegments];

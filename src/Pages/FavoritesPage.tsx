@@ -40,21 +40,25 @@ const FavoriteCards = () => {
   }, [cards]);
   return (
     <div className="favMain">
+      {/* Header */}
       <header className="favHeader">
         <h1 className="favTitle">My Favorites</h1>
         <p className="favDescription">Here you can see your favorited cards</p>
       </header>
+      {/* Cards Section */}
       <section className="favCardSection">
         {loading ? (
           <Spinner size="xl" />
         ) : favCards.length > 0 ? (
           <MyCards cards={itemsToDisplay} />
         ) : (
+          // No Favorites Message
           <div className="mb-fluid-8xl h-fluid-md p-8 text-center text-fluid-2xl">
             No favorite cards yet.
           </div>
         )}
       </section>
+      {/* Pagination */}
       {!isMobile && totalPages > 1 && (
         <div className="paginationDiv">
           <MyPagination

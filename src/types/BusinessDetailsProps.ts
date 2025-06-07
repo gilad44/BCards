@@ -1,6 +1,6 @@
-import { CardProps } from "./TCard";
+import { TCard } from "./TCard";
 
 type BusinessDetailsProps = {
-  card: CardProps;
+  card: TCard;
 };
 export default BusinessDetailsProps;

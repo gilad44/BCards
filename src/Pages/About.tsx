@@ -5,15 +5,13 @@ const About = () => {
         <h1>About Us</h1>
       </div>
       <p className="aboutContent">
-        BCard is an innovative digital business card platform that enables
-        professionals to create stunning digital business cards which stand out
-        in today's competitive environment. With BCard, your professional
-        identity comes to life through customizable elements that capture
-        attention and leave a lasting impression. Whether you're a freelancer,
-        entrepreneur, or corporate professional, BCard provides a modern
-        solution to showcase your identity and expand your network. Our
-        user-friendly interface makes creating impressive digital business cards
-        accessible to everyone, regardless of technical expertise.
+        BCard is a modern business card management web application. It allows
+        users to create, edit, and manage digital business cards, as well as
+        browse and favorite cards from others. The project was developed using
+        React, TypeScript, Redux Toolkit, and Flowbite React for UI components.
+        Styling is handled with Tailwind CSS, and form validation uses Joi. The
+        app demonstrates best practices in component-based architecture, state
+        management, and responsive design.
       </p>
     </div>
   );
