@@ -34,7 +34,7 @@ const initialState = {
 };
 
 const userSlice = createSlice({
-  name: "user", // name OF THE SLICE
+  name: "user",
   initialState,
   reducers: {
     login: (state, data) => {

@@ -50,15 +50,11 @@ export const createCardsSchema = Joi.object({
     .keys({
       url: Joi.alternatives()
         .try(
-          // Option 1: Standard URL validation
           Joi.string().pattern(
             /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/,
           ),
-          // Option 2: Accept data URLs (base64 encoded images)
           Joi.string().pattern(/^data:image\/(jpeg|jpg|png|gif|webp);base64,/),
-          // Option 3: Accept Blob URLs (for files selected via file input)
           Joi.string().pattern(/^blob:/),
-          // Option 4: File names or upload placeholders
           Joi.string().pattern(/^(uploaded|local):/),
         )
         .required()

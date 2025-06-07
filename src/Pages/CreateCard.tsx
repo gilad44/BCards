@@ -48,7 +48,6 @@ const CreateCard = () => {
         navigate("/login");
         return;
       }
-      // get user data from token & set it in headers
       axios.defaults.headers.common["x-auth-token"] = token;
 
       await axios.post(
@@ -56,12 +55,10 @@ const CreateCard = () => {
         form,
       );
       toast.success("Card created successfully!");
-      navigate("/");
+      navigate("/my-cards");
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        // Type assertion for the response data
         const errorData = error.response?.data as { message?: string };
-        console.error("API error response:", errorData); // Debugging log
 
         toast.error(
           `Failed to create card: ${errorData?.message || "Unknown error"}`,

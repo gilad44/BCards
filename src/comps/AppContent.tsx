@@ -45,7 +45,6 @@ const AppContent = () => {
   }, []);
   const isAbout = location.pathname === "/about";
   const isProfile = location.pathname === "/profile";
-  console.log(`W: ${window.innerWidth} H: ${window.innerHeight}`);
 
   return (
     <>

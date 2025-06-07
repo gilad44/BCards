@@ -48,7 +48,7 @@ const Signup = () => {
     mode: "all",
     resolver: joiResolver(signupSchema),
   });
-  console.log("Form State:", errors, isValid);
+
   const submitForm = async (form: SignupData) => {
     try {
       //////////////////// **** Auto Login ***** ////////////////////////
@@ -58,23 +58,20 @@ const Signup = () => {
       );
       localStorage.setItem("token", token.data);
       const parsedToken = jwtDecode(token.data) as { _id: string };
-      // get user data from token & set it in headers
+
       axios.defaults.headers.common["x-auth-token"] = token.data;
 
-      // get user data from api
       const res = await axios.get(
         "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/" +
           parsedToken._id,
       );
 
-      // update user data in redux store
       dispatch(userActions.login(res.data));
 
       toast.success("Registration successful!");
       navigate("/");
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        // Type assertion for the response data
         const errorData = error.response?.data as { message?: string };
         console.error("Registration error:", errorData);
 

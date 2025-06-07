@@ -35,7 +35,7 @@ const BusinessDetails = () => {
   };
 
   const handleReturn = () => {
-    navigate(-1); // This navigates back to the previous page
+    navigate(-1);
   };
   useEffect(() => {
     const fetchCardDetails = async () => {
@@ -43,7 +43,6 @@ const BusinessDetails = () => {
         const res = await axios.get(
           `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${id}`,
         );
-        console.log(res.data);
         setCard(res.data);
       } catch (error) {
         console.error("Error fetching cards", error);
