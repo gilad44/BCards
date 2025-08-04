@@ -60,13 +60,15 @@ const CapsuleContent = ({
   const user = useSelector((state: RootState) => state.userSlice.user);
 
   const texture = useMemo(() => {
-    if (!imageUrl) return undefined;
+    if (!imageUrl || !user?.image?.url) return undefined;
     return useLoader(THREE.TextureLoader, user.image.url);
-  }, [imageUrl, user?.image.url]);
+  }, [imageUrl, user?.image?.url]);
 
   useEffect(() => {
     return () => {
-      if (texture) texture.dispose();
+      if (texture && typeof texture === "object" && "dispose" in texture) {
+        (texture as THREE.Texture).dispose();
+      }
     };
   }, [texture]);
 
@@ -160,7 +162,7 @@ const CapsuleContent = ({
   const capsuleGeoArgs = useMemo(() => {
     const radialSegments = viewport.width < 768 ? 16 : 32;
     const heightSegments = viewport.width < 768 ? 32 : 64;
-    return [1.8, capsuleLength, radialSegments, heightSegments];
+    return [1.8, capsuleLength, 4, radialSegments, heightSegments] as const;
   }, [viewport.width, capsuleLength]);
 
   return (
@@ -185,7 +187,9 @@ const CapsuleContent = ({
           transparent={transparent}
           opacity={opacity ?? 1}
         />
-        <capsuleGeometry args={[1.8, capsuleLength, 32, 64]} />
+        <capsuleGeometry
+          args={capsuleGeoArgs as [number, number, number, number, number]}
+        />
 
         {imageUrl && texture && (
           <mesh
@@ -249,7 +253,8 @@ const CapsuleContent = ({
     </>
   );
 };
-const CapsuleContentMemo = React.memo(CapsuleContent);
+// Memoized component for potential performance optimization
+// const CapsuleContentMemo = React.memo(CapsuleContent);
 
 const CapsuleLink = ({
   text,
@@ -260,21 +265,6 @@ const CapsuleLink = ({
   transparent,
   opacity,
 }: CapsuleLinkProps) => {
-  const [capsuleLength, setCapsuleLength] = useState(5);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      setWindowWidth(window.innerWidth);
-    });
-
-    resizeObserver.observe(document.body);
-
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, []);
-
   const handleClick = () => {
     if (onClick) onClick();
     else window.location.href = to;
@@ -300,7 +290,6 @@ const CapsuleLink = ({
         text={text}
         onClick={handleClick}
         className={className}
-        resetCapsuleLength={setCapsuleLength}
         imageUrl={imageUrl}
         transparent={transparent}
         opacity={opacity}

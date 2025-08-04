@@ -11,9 +11,9 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { DarkThemeToggle } from "flowbite-react";
 import BrandText from "../comps3D/BrandText";
@@ -25,8 +25,6 @@ import { RootState } from "../store/store";
 const MyNav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
-  const [pathName, setPathName] = useState("/");
   const user = useSelector((state: RootState) => state.userSlice.user);
   const keyword = useSelector(
     (state: RootState) => state.searchSlice.searchWord,
@@ -51,7 +49,6 @@ const MyNav = () => {
   };
   // Mobile menu state
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleBrandClick = () => {
     navigate("/");
@@ -61,21 +58,9 @@ const MyNav = () => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  useEffect(() => {
-    setPathName(location.pathname);
-  }, [location.pathname]);
 
   return (
     <AppBar style={{ padding: 0 }} position="static">
@@ -188,8 +173,8 @@ const MyNav = () => {
                 <Avatar
                   className="bg-blue-600 dark:bg-white"
                   style={{ width: "30px", height: "30px" }}
-                  alt={user.image.alt}
-                  src={user.image.url}
+                  alt={user.image?.alt || "User profile"}
+                  src={user.image?.url || ""}
                   sx={{
                     cursor: "pointer",
                     "&:hover": {

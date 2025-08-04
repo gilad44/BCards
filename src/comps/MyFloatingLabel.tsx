@@ -39,13 +39,16 @@ const MyFloatingLabel = ({
 
   const error = getNestedError(name);
 
+  // Use valueAsNumber for number inputs to ensure proper type conversion
+  const registerOptions = type === "number" ? { valueAsNumber: true } : {};
+
   return (
     <div className="relative mb-fluid-md">
       <div className="relative">
         <>
           <input
             name={name}
-            {...register(name)}
+            {...register(name, registerOptions)}
             placeholder=" "
             type={type || "text"}
             {...inputProps}

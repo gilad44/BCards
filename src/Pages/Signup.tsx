@@ -2,6 +2,7 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import axios from "axios";
 import { Button, Checkbox, Label } from "flowbite-react";
 import { jwtDecode } from "jwt-decode";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -43,11 +44,17 @@ const Signup = () => {
     handleSubmit,
     formState: { errors, isValid },
     reset,
+    trigger,
   } = useForm<SignupData>({
     defaultValues: initialFormData,
-    mode: "all",
+    mode: "onChange",
     resolver: joiResolver(signupSchema),
   });
+
+  // Force validation on mount
+  useEffect(() => {
+    trigger();
+  }, [trigger]);
 
   const submitForm = async (form: SignupData) => {
     try {
@@ -177,12 +184,14 @@ const Signup = () => {
               <MyFloatingLabel
                 name="address.houseNumber"
                 label="House number"
+                type="number"
                 register={register}
                 errors={errors}
               />
               <MyFloatingLabel
                 name="address.zip"
                 label="Zip code"
+                type="number"
                 register={register}
                 errors={errors}
               />

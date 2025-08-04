@@ -4,7 +4,6 @@ import { Button } from "flowbite-react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import MyFloatingLabel from "../comps/MyFloatingLabel";
-import { buttonTheme } from "../data/themes";
 import { TCard } from "../types/TCard";
 import { editCardSchema } from "../Validations/editCard.joi";
 
@@ -13,8 +12,10 @@ type EditCardProps = {
   onClose: () => void;
 };
 
+type EditCardFormData = Omit<TCard, "_id" | "user_id" | "createdAt" | "likes">;
+
 const EditCard = ({ card }: EditCardProps) => {
-  const initialFormData: TCard = {
+  const initialFormData: EditCardFormData = {
     title: card.title,
     subtitle: card.subtitle,
     email: card.email,
@@ -39,13 +40,13 @@ const EditCard = ({ card }: EditCardProps) => {
     handleSubmit,
     formState: { errors, isValid },
     reset,
-  } = useForm<TCard>({
+  } = useForm<EditCardFormData>({
     defaultValues: initialFormData,
     mode: "all",
     resolver: joiResolver(editCardSchema),
   });
 
-  const submitForm = async (form: TCard) => {
+  const submitForm = async (form: EditCardFormData) => {
     try {
       const token = localStorage.getItem("token");
       if (token) {
@@ -60,7 +61,7 @@ const EditCard = ({ card }: EditCardProps) => {
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const errorData = error.response?.data as { message?: string };
-        console.error("API error response:", errorData); // Debugging log
+        console.error("API error response:", errorData);
 
         toast.error(
           `Failed to update card: ${errorData?.message || "Unknown error"}`,
@@ -174,13 +175,11 @@ const EditCard = ({ card }: EditCardProps) => {
               disabled={!isValid}
               type="submit"
               className="submit font-semibold text-black disabled:text-gray-500"
-              theme={buttonTheme}
             >
               Submit
             </Button>
             <Button
               type="button"
-              theme={buttonTheme}
               className="reset font-semibold text-black"
               onClick={() => reset()}
             >

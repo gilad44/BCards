@@ -23,7 +23,7 @@ const Cards = ({ cards }: TCardsArr) => {
 
   const handleFavoriteClick = (card: TCard) => {
     if (!user?._id || !user) {
-      console.log("Empty or invalid card ID");
+      // User not logged in - silently return or show login prompt
       return;
     }
 
