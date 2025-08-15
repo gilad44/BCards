@@ -2,7 +2,6 @@ import axios from "axios";
 import { Button } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { buttonTheme } from "../data/themes";
 import { TCard } from "../types/TCard";
 
 type ContactProps = {
@@ -81,11 +80,7 @@ const BusinessDetails = () => {
           />
         </div>
       </div>
-      <Button
-        theme={buttonTheme}
-        className="retunButton"
-        onClick={handleReturn}
-      >
+      <Button className="retunButton" color="blue" onClick={handleReturn}>
         Return
       </Button>
     </div>

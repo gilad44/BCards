@@ -1,10 +1,8 @@
 import { Button } from "flowbite-react";
 import { useState } from "react";
-import { MdEmojiEmotions } from "react-icons/md";
 import { useSelector } from "react-redux";
 import EditProfile from "../comps/EditProfile";
 import UserDetail from "../comps/UserDetail";
-import { buttonTheme } from "../data/themes";
 import { RootState } from "../store/store";
 const Profile = () => {
   const user = useSelector((state: RootState) => state.userSlice.user);
@@ -50,9 +48,9 @@ const Profile = () => {
           <div className="flex w-full justify-between px-3">
             <h2 className="userInfoTitle">User Info</h2>
             <Button
-              theme={buttonTheme}
               size="md"
               className="profileEditButton"
+              color="blue"
               onClick={() => setEditVisible(!editVisible)}
             >
               Edit Profile

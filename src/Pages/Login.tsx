@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import MyFloatingLabel from "../comps/MyFloatingLabel";
-import { buttonTheme } from "../data/themes";
 import { userActions } from "../slices/userSlice";
 import LoginData from "../types/LoginData";
 import { loginSchema } from "../Validations/login.joi";
@@ -60,10 +59,7 @@ const Login = () => {
     <>
       <div className="loginFormMain">
         <h1 className="formTitle">Login</h1>
-        <form
-          onSubmit={handleSubmit(submitForm)}
-          className="loginForm"
-        >
+        <form onSubmit={handleSubmit(submitForm)} className="loginForm">
           <MyFloatingLabel
             name="email"
             label="Email"
@@ -84,11 +80,11 @@ const Login = () => {
             </p>
           )}
           <Button
-            theme={buttonTheme}
             size="lg"
             disabled={!isValid}
             type="submit"
             className="loginSubmit"
+            color="blue"
           >
             Submit
           </Button>

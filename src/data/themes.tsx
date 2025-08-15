@@ -18,18 +18,8 @@ const searchIconTheme = createTheme({
     },
   },
 });
-const buttonTheme = createTheme({
-  disabled: "pointer-events-none opacity-50",
-  fullSized: "w-full",
-  pill: "rounded-full",
-  size: {
-    xs: "h-8 px-3 ",
-    sm: "h-9 px-3 ",
-    md: "h-10 px-5 ",
-    lg: "h-12 px-5",
-    xl: "h-[52px] px-6",
-  },
-});
+// Removed problematic buttonTheme - using default Flowbite styling instead
+// const buttonTheme = createTheme({...});
 const paginationTheme = createTheme({
   base: "",
   layout: {
@@ -75,7 +65,6 @@ const navbarTheme = createTheme({
   },
 });
 export {
-  buttonTheme,
   cardTheme,
   collapseTheme,
   navbarTheme,

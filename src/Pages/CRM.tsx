@@ -9,7 +9,6 @@ import DetailsSection from "../comps/CardDetailsSection";
 import CrmTable from "../comps/CrmTable";
 import EditCard from "../comps/EditCard";
 import MyPagination from "../comps/MyPagination";
-import { buttonTheme, paginationTheme } from "../data/themes";
 import useCardPagination from "../Hooks/useCardPagination";
 import type { RootState } from "../store/store";
 import { TCard } from "../types/TCard";
@@ -107,15 +106,15 @@ const Crm = () => {
           <>
             <div className="buttons">
               <Button
-                theme={buttonTheme}
                 className="editButton text-black"
+                color="gray"
                 onClick={() => setEditVisible(!editVisible)}
               >
                 <RiFileEditFill />
               </Button>
               <Button
-                theme={buttonTheme}
                 className="deleteButton text-black"
+                color="red"
                 onClick={() => {
                   if (selectedRow) {
                     deleteCard(selectedRow);
@@ -141,6 +140,7 @@ const Crm = () => {
               findUserForCard={findUserForCard}
               deleteCard={deleteCard}
               setEditVisible={setEditVisible}
+              editVisible={editVisible}
             />
           ))}
         {loading && <Spinner size="xl" />}
@@ -155,20 +155,17 @@ const Crm = () => {
       <div className="paginationDiv">
         {window.innerWidth < 640 ? (
           <Button
-            theme={buttonTheme}
             onClick={loadMore}
             className="loadMoreButton text-black"
+            color="blue"
           >
             Load More
           </Button>
         ) : (
           <MyPagination
-            theme={paginationTheme}
-            layout="pagination"
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={onPageChange}
-            showIcons={true}
           />
         )}
       </div>

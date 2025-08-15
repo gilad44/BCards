@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import MyFloatingLabel from "../comps/MyFloatingLabel";
-import { buttonTheme } from "../data/themes";
 import { TCard } from "../types/TCard";
 import { createCardsSchema } from "../Validations/createCardSchema.joi";
 const CreateCard = () => {
@@ -174,14 +173,14 @@ const CreateCard = () => {
             <Button
               disabled={!isValid}
               type="submit"
-              theme={buttonTheme}
+              color="blue"
               className="submit font-semibold text-black disabled:text-gray-500"
             >
               Submit
             </Button>
             <Button
               type="button"
-              theme={buttonTheme}
+              color="gray"
               className="reset font-semibold text-black"
               onClick={() => reset()}
             >

@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import MyFloatingLabel from "../comps/MyFloatingLabel";
-import { buttonTheme } from "../data/themes";
 import { userActions } from "../slices/userSlice";
 import { RootState } from "../store/store";
 import EditProfileData from "../types/EditProfileData";
@@ -176,13 +175,13 @@ const EditProfile = () => {
             disabled={!isValid}
             type="submit"
             className="submit"
-            theme={buttonTheme}
+            color="blue"
           >
             Save changes
           </Button>
           <Button
             type="button"
-            theme={buttonTheme}
+            color="gray"
             className="reset"
             onClick={() => reset()}
           >
