@@ -5,4 +5,12 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   base: "./",
+  optimizeDeps: {
+    include: ["@react-three/drei", "@react-three/fiber", "three"],
+  },
+  server: {
+    fs: {
+      strict: false,
+    },
+  },
 });
